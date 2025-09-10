@@ -1,69 +1,54 @@
-# React + TypeScript + Vite
+World Clock
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive world clock web app built with React, TypeScript, Vite, and **Tailwind CSS**.  
+The app lets you keep track of the local time in 20+ major cities around the world, switch between digital and analog clocks, search for cities, and save your favorites. All preferences are stored in localStorage, so your setup persists across sessions.
 
-Currently, two official plugins are available:
+ Features
+ Track multiple cities: with predefined list of popular time zones.
+ Search bar: to quickly find a city by name or timezone.
+ Favorites page: mark a city with a star and access it later.
+ Digital or analog display: toggle applies globally.
+ City backgrounds: each city can show a custom image.
+ Persistent settings: stored in `localStorage` (favorites, cities, display mode).
+ Responsive design: works on mobile, tablet, and desktop.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Getting Started
 
-## Expanding the ESLint configuration
+Prerequisites
+- Node.js 20.19+ or 22.12+ (Vite requirement)
+- npm or yarn
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Installation
+Clone the repo and install dependencies:
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+git clone https://github.com/<your-username>/worldclock.git
+cd worldclock
+npm install
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+Run locally:
+npm run dev
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Build for production:
+npm run build
+npm run preview
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Tech Stack:
+React 18+ with hooks
+TypeScript for type safety
+Vite for fast development and build
+Tailwind CSS for styling
+React Router for navigation
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+
+Project structure:
+src/
+ ├─ components/      # Reusable UI components (ClockCard, AnalogClock, etc.)
+ ├─ data/            # Predefined popular cities
+ ├─ hooks/           # Custom hooks (useLocalStorage, useTicker)
+ ├─ pages/           # Page-level components (CityDetail, Favorites)
+ ├─ utils/           # Time/date utilities
+ ├─ App.tsx          # Root app with routing
+ └─ main.tsx         # Entry point
+public/
+ └─ cities/          # Local city images
