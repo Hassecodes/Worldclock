@@ -17,12 +17,32 @@ export interface ClockCardProps {
 
 const cityEmoji = (name: string): string => {
   const n = name.toLowerCase();
-  if (n.includes('new york')) return '🗽';
-  if (n.includes('paris')) return '🗼';
-  if (n.includes('london')) return '🎡';
-  if (n.includes('tokyo')) return '🗼';
-  if (n.includes('sydney')) return '🌉';
-  if (n.includes('dubai')) return '🏙️';
+  if (n.includes('new york')) return '🇺🇸';
+  if (n.includes('chicago')) return '🇺🇸';
+  if (n.includes('los angeles')) return '🇺🇸';
+  if (n.includes('berlin')) return '🇩🇪';
+  if (n.includes('cairo')) return '🇪🇬';
+  if (n.includes('denver')) return '🇺🇸';
+  if (n.includes('hongkong')) return '🇨🇳';
+  if (n.includes('shanghai')) return '🇨🇳';
+  if (n.includes('johannesburg')) return '🇿🇦';
+  if (n.includes('kolkata')) return '🇮🇳';
+  if (n.includes('madrid')) return '🇪🇸';
+  if (n.includes('mexico city')) return '🇲🇽';
+  if (n.includes('moscow')) return '🇷🇺';
+  if (n.includes('rome')) return '🇮🇹';
+  if (n.includes('sao paulo')) return '🇧🇷';
+  if (n.includes('seoul')) return '🇰🇷';
+  if (n.includes('singapore')) return '🇸🇬';
+  if (n.includes('stockholm')) return '🇸🇪';
+  if (n.includes('tokyo')) return '🇯🇵';
+  if (n.includes('toronto')) return '🇨🇦';
+  if (n.includes('bangkok')) return '🇹🇭';
+  if (n.includes('paris')) return '🇫🇷';
+  if (n.includes('london')) return '🇬🇧';
+  if (n.includes('tokyo')) return '🇯🇵';
+  if (n.includes('sydney')) return '🇦🇺';
+  if (n.includes('dubai')) return '🇦🇪';
   return '🌍';
 };
 
@@ -66,7 +86,7 @@ export const ClockCard: React.FC<ClockCardProps> = ({
           ) : (
             <DigitalClock time={time} zoneLabel={time.zoneNameShort} />
           )}
-          <div className="text-[11px] text-slate-500">{city.timeZone} • {time.zoneNameShort}</div>
+          <div className="text-[11px] text-slate-500">{city.timeZone}</div>
         </div>
       </div>
 

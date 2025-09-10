@@ -10,9 +10,7 @@ export interface DigitalClockProps {
 export const DigitalClock: React.FC<DigitalClockProps> = ({ time, zoneLabel }) => {
   return (
     <div className="flex flex-col items-center">
-      <div className="font-mono text-3xl md:text-4xl lg:text-5xl tracking-widest">
-        {formatDigital24(time)}
-      </div>
+      <div>{formatDigital24(time)}</div>
       {zoneLabel && (
         <div className="text-xs md:text-sm text-slate-500 mt-1">{zoneLabel}</div>
       )}

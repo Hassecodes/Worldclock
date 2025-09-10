@@ -51,7 +51,7 @@ export default function App(): ReactElement {
               <Link to="/" className="text-lg md:text-xl font-bold">World Clock</Link>
               <nav className="flex items-center gap-3 text-sm">
                 <NavLink to="/" className={({isActive}) => isActive ? 'underline' : 'hover:underline'}>Hem</NavLink>
-                <NavLink to="/favorites" className={({isActive}) => isActive ? 'underline' : 'hover:underline'}>Favoriter ⭐</NavLink>
+                <NavLink to="/favorites" className={({isActive}) => isActive ? 'underline' : 'hover:underline'}>Favoriter</NavLink>
               </nav>
             </div>
 
