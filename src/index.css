@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* dina helpers */
+.card { @apply bg-white rounded-2xl shadow-md p-4 md:p-6; }
+.btn { @apply inline-flex items-center justify-center gap-2 rounded-xl border border-slate-300 px-4 py-2 hover:bg-slate-100 active:scale-[.98] transition; }
+.btn-primary { @apply bg-slate-900 text-white border-slate-900 hover:bg-slate-800; }
+.input { @apply rounded-xl border border-slate-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-slate-400 w-full; }
+.select { @apply rounded-xl border border-slate-300 px-3 py-2 w-full bg-white; }
+.label { @apply text-sm font-medium text-slate-700; }
