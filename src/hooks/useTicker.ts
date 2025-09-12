@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
 
-/** Rerenders at a fixed interval and exposes the current Date. */
+/** 
+ * Returerar en Date som uppdateras med jämna mellanrum
+ * Används för att driva klockorna live utan ett API
+*/
 export function useTicker(intervalMs: number = 1000): Date {
   const [now, setNow] = useState<Date>(() => new Date());
   useEffect(() => {

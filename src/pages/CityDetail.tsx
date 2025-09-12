@@ -12,6 +12,11 @@ export interface CityDetailProps {
   onRemove: (id: string) => void;
 }
 
+
+/**
+ * Detaljsida för en stad. Visar stor klocka och header-bild.
+ * Hittar staden via :id i URL:en (React Router).
+ */
 export const CityDetail: React.FC<CityDetailProps> = ({ cities, displayMode, onRemove }) => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();

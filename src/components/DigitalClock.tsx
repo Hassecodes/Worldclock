@@ -7,6 +7,7 @@ export interface DigitalClockProps {
   zoneLabel?: string;
 }
 
+/** Digital klocka (24h). Tar in färdig-beräknade TimeParts. */
 export const DigitalClock: React.FC<DigitalClockProps> = ({ time, zoneLabel }) => {
   return (
     <div className="flex flex-col items-center">

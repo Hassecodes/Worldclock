@@ -28,7 +28,6 @@ export const AddCityForm: React.FC<AddCityFormProps> = ({ onAdd }) => {
       id: toSlug(name),
       name: name.trim(),
       timeZone: timeZone.trim() as TimeZoneId,
-      imageUrl: imageUrl.trim() || undefined,
     };
     onAdd(city);
     setName('');

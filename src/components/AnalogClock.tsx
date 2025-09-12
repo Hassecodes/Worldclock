@@ -6,15 +6,22 @@ export interface AnalogClockProps {
   size?: number; // px
 }
 
+/**
+ * Analog klocka renderad i SVG.
+ * Roterar visare utifrån timmar/minuter/sekunder.
+ */
+
 export const AnalogClock: React.FC<AnalogClockProps> = ({ time, size = 180 }) => {
   const radius = size / 2;
   const cx = radius;
   const cy = radius;
 
+  // Beräkna vinklar i grader
   const hourAngle = ((time.hour % 12) + time.minute / 60 + time.second / 3600) * 30; // deg
   const minuteAngle = (time.minute + time.second / 60) * 6;
   const secondAngle = time.second * 6;
 
+   // Hjälp för att rita en visare
   const hand = (
     length: number,
     strokeWidth: number,
@@ -33,6 +40,7 @@ export const AnalogClock: React.FC<AnalogClockProps> = ({ time, size = 180 }) =>
     />
   );
 
+  // 60 tick-markeringar (större för 12/3/6/9)
   const tickMarks = Array.from({ length: 60 }, (_, i) => {
     const angle = i * 6;
     const isHour = i % 5 === 0;

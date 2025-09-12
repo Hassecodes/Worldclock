@@ -1,6 +1,10 @@
 import type { City } from '../types';
 import { toSlug } from '../utils/time';
 
+/**
+ * Förifylld lista på storstäder. Används som startdata.
+ * För att använda lokala bilder: peka imageUrl till "/cities/<slug>.jpg"
+ */
 export const popularCitiesSeed: City[] = [
   { name: 'Stockholm',       timeZone: 'Europe/Stockholm', imageUrl: '/cities/Stockholm.jpg',    id: toSlug('Stockholm') },
   { name: 'London',          timeZone: 'Europe/London', imageUrl: '/cities/London.jpg', id: toSlug('London') },

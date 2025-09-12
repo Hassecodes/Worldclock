@@ -1,6 +1,7 @@
+// Centrala typer för appen, TS hjälper här för att fånga fel.
 export type DisplayMode = 'digital' | 'analog';
 
-// Common IANA zones as string literal types (extend as needed)
+// tidzoner som används i projektet.
 export type PredefinedTimeZone =
   | 'UTC'
   | 'Europe/Stockholm'
@@ -25,24 +26,24 @@ export type PredefinedTimeZone =
   | 'Australia/Sydney'
   | 'Africa/Johannesburg';
 
-// Allow arbitrary valid IANA strings as well, while keeping strong typing for predefined ones
+// Tillåter IANA zoner som string literal typer för bättre autocomplete.
 export type TimeZoneId = PredefinedTimeZone | (string & {});
 
 export interface City {
-  id: string;        // slug
-  name: string;      // "Stockholm"
-  timeZone: TimeZoneId;
-  imageUrl?: string;
+  id: string;        // slug, exempel: Stockholm.
+  name: string;      // Visningsnamn, exempel: "Stockholm"
+  timeZone: TimeZoneId; // Tidzoner
+  imageUrl?: string; // bilder
 }
 
 export interface ClockSettings {
-  displayMode: DisplayMode;
+  displayMode: DisplayMode; // knapp/switch för att ändra från digital till analog och tillbaka.
 }
 
 export interface TimeParts {
-  hour: number;      // 0..23
-  minute: number;    // 0..59
-  second: number;    // 0..59
+  hour: number;      
+  minute: number;   
+  second: number;   
   dayPeriod?: 'am' | 'pm';
-  zoneNameShort?: string; // e.g. GMT+2 or CET
+  zoneNameShort?: string; // exempel: GMT+2 or CET
 }

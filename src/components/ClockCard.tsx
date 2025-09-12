@@ -6,6 +6,7 @@ import { useTicker } from '../hooks/useTicker';
 import { AnalogClock } from './AnalogClock';
 import { DigitalClock } from './DigitalClock';
 
+// Props: presentera en stad + klocka + favoritknapp
 export interface ClockCardProps {
   city: City;
   displayMode: DisplayMode;
@@ -15,6 +16,7 @@ export interface ClockCardProps {
   compact?: boolean;
 }
 
+// Emoji för lite personlighet och för att göra det mer tydligt
 const cityEmoji = (name: string): string => {
   const n = name.toLowerCase();
   if (n.includes('new york')) return '🇺🇸';
@@ -54,6 +56,8 @@ export const ClockCard: React.FC<ClockCardProps> = ({
   isFavorite = false,
   compact = true,
 }) => {
+  
+  // Tick varje sekund och räkna om tid i önskad tidszon
   const now = useTicker(1000);                   // tick varje sekund
   const time = useMemo(() => getTimePartsInZone(now, city.timeZone), [now, city.timeZone]);
 

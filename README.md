@@ -52,3 +52,6 @@ src/
  └─ main.tsx         # Entry point
 public/
  └─ cities/          # Local city images
+
+
+Bilder på skiss i dator och mobil vy finns i public mappen och även userstorys
